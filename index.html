@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.1/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.1/dist/js/tom-select.complete.min.js"></script>
+    <title>Form</title>
+</head>
+<body>
+    <div class="page-header row">
+        <header class="page-heading">
+            Red Hat
+        </header>
+    </div>
+    <div class="form row">
+        <form action="#" id="registration-form">
+            <div class="row">
+                <div class="column">
+                    <label for="first-name">
+                        First Name 
+                        <span class="red-required">*</span>
+                    </label>
+                    <input 
+                        name="first-name" 
+                        type="text" 
+                        id="first-name" 
+                        required
+                    />
+                    <small></small>
+                </div>
+                <div class="column">
+                    <label for="first-name">
+                        Last Name
+                    </label>
+                    <input 
+                        name="last-name" 
+                        type="text" 
+                        id="last-name"
+                    />
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <label for="email">
+                        Email 
+                        <span class="red-required">*</span>
+                    </label>
+                    <input 
+                        name="email" 
+                        type="text" 
+                        id="email" 
+                        required
+                    />
+                    <small></small>
+                </div>
+                <div class="column">
+                    <label for="mobile-number">
+                        Mobile Number 
+                        <span class="red-required">*</span>
+                    </label>
+                    <input 
+                        name="mobile-number" 
+                        type="tel" 
+                        id="mobile-number" 
+                        required
+                    />
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <label for="current-location">
+                        Current Location 
+                        <span class="red-required">*</span>
+                    </label>
+                    <input 
+                        name="current-location" 
+                        type="text" 
+                        id="current-location" 
+                        required
+                    />
+                    <small></small>
+                </div>
+                <div class="column">
+                    <label for="gender">
+                        Gender 
+                        <span class="red-required">*</span>
+                    </label>
+                    <div>
+                        <label for="gender-male">
+                            Male
+                        </label>
+                        <input 
+                            name="gender" 
+                            type="radio" 
+                            id="gender" 
+                            value="Male" 
+                            required
+                        />
+                        <label for="gender-female">
+                            Female
+                        </label>
+                        <input 
+                            name="gender" 
+                            type="radio" 
+                            id="gender" 
+                            value="Female" 
+                            required
+                        /> 
+                        <small></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <label for="college">
+                        College/University 
+                        <span class="red-required">*</span>
+                    </label>
+                    <select  
+                        name="college"
+                        id="college-list"
+                        class="college-list-select"
+                    >
+                        <option value=""></option>
+                    </select>
+                    <small></small>
+                </div>
+                <div class="column">
+                    <label for="dob">
+                        Date of Birth 
+                        <span class="red-required">*</span>
+                    </label>
+                    <input 
+                        name="dob" 
+                        type="date" 
+                        id="dob" 
+                        required
+                    />
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="row">
+                <p class="column">Skills</p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <label for="skill-html">
+                        HTML 
+                    </label>
+                    <input 
+                        name="skill-html" 
+                        id="skill-html" 
+                        type="range" 
+                        max="100" 
+                        min="0" 
+                        value="50"
+                    />
+                    <small></small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="skill-css"> 
+                        CSS 
+                    </label>
+                    <input 
+                        name="skill-css" 
+                        id="skill-css" 
+                        type="range" 
+                        max="100" 
+                        min="0" 
+                        value="50"
+                    />
+                    <small></small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="skill-javascript"> 
+                        HTML 
+                    </label>
+                    <input 
+                        name="skill-javascript" 
+                        id="skill-javascript" 
+                        type="range" 
+                        max="100" 
+                        min="0" 
+                        value="50"
+                    />
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <button id="submit-form" type="submit" class="button">
+                        SUBMIT
+                    </button>
+                </div>
+                <div class="column">
+                    <button type="reset" class="button-inverted">
+                        RESET
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

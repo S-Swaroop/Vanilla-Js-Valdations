@@ -1,0 +1,104 @@
+* {
+    font-family: 'Red Hat Text' !important;
+    font-style: normal;
+    font-weight: 400 ;
+}
+
+html {
+    display: grid ;
+    height: 30% ;
+}
+
+input {
+    max-width: 440px ;
+    height: 36px ;
+    border: 1.5px solid rgb(202, 195, 195);
+    border-bottom: 1.5px solid #222 !important;
+}
+
+form {
+    width: 85%;
+    margin: 0 auto;
+}
+
+label {
+    margin: 4px;
+}
+
+small {
+    background-color: rgba(171, 45, 45, 0.392);
+}
+
+.button {
+    text-align: center ;
+    width: 84px ;
+    height: 36px ;
+    background: #0066CC;
+    border-radius: 3px ;
+    border : none ;
+    color: white ;
+}
+
+.button-inverted {
+    text-align: center ;
+    width: 84px ;
+    height: 36px ;
+    background: white ;
+    border-radius: 3px ;
+    border : 2px #0066CC solid ;
+    color: #0066CC ;
+}
+
+.college-list-select {
+    font: inherit !important ;
+    max-width: 440px ;
+    height: 36px !important;
+    border: 1.5px solid rgb(202, 195, 195) !important;
+    border-bottom: 1.5px solid #222 !important;
+    display: flex !important ;
+}
+
+.college-list-select div {
+    padding: 0px 0px 0px 0px !important ;
+}
+
+.red-required {  
+    color: rgb(151, 1, 1);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+    margin: 15px 30px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+/* ---------- For Responsive display in mobile view----------------- */
+
+@media screen and (max-width: 600px) {
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-direction: column;
+}
+
+.column {
+    display: flex;
+    flex: 0.5;
+    margin: 15px 30px;
+}
+
+}
