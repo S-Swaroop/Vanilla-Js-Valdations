@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
 * {
-    font-family: 'Red Hat Text' !important;
+    font-family: 'Red Hat Display', sans-serif !important;
     font-style: normal;
-    font-weight: 400 ;
+    /* font-weight: 400 ; */
 }
 
 html {
@@ -26,7 +28,21 @@ label {
 }
 
 small {
-    background-color: rgba(171, 45, 45, 0.392);
+    max-width: 447px ;
+    background-color: rgba(199, 15, 15, 0.21) ;
+    color: red ;
+}
+
+.page-header {
+    text-align: left !important;
+    font-size: small;
+    position: static ;
+    top: 0px ;
+    width: 100%;
+    justify-content: space-around ;
+    height: 15vh ;
+    background-color: black ;
+    color: white ;
 }
 
 .button {
@@ -66,6 +82,9 @@ small {
     color: rgb(151, 1, 1);
 }
 
+.green-valid {
+    color: rgb(7, 184, 7) ;
+}
 .row {
     display: flex;
     justify-content: space-between;
@@ -80,10 +99,18 @@ small {
 }
 
 .form {
+    margin-top: 30px ;
     display: flex;
     align-items: center;
 }
 
+.ts-control {
+    border : none !important ;
+}
+
+.button-column {
+    align-items: center !important ;
+}
 /* -------------Modal---------------- */
 .container {
   display: flex;

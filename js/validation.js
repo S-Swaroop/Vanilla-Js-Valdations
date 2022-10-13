@@ -93,11 +93,12 @@ const isLocationValid = () => {
  * @returns {boolean}
  */
 const isGenderSelected = () => {
-    if (isEmpty(genderEl.value)) {
-        showError(genderEl , 'Please Select a gender!') ;
+    if (isEmpty(document.forms[0]['gender'].value)) {
+        //passing it's parent because the radio elements are inside another div tag 
+        showError(genderEl.parentElement , 'Please Select a gender!') ;
         return false ;
     } else {
-        showSuccess(genderEl) ;
+        showSuccess(genderEl.parentElement) ;
         return true ;
     }
 }
@@ -157,8 +158,8 @@ export const validate = (event) => {
     event.preventDefault();
     const formData = {} ;
     let isFormValid = true ;
-    for (let [key , value] of Object.entries(validators)) {
-        isFormValid &&= value() ;
+    for (let [elementId , validator] of Object.entries(validators)) {
+        isFormValid = isFormValid & validator() ;
     }
     // submit to the server if the form is valid
     if (isFormValid) {

@@ -10,11 +10,19 @@
     <title>Form</title>
 </head>
 <body>
+    <!-- Header -->
     <div class="page-header row">
-        <header class="page-heading">
-            Red Hat
-        </header>
+        <div class="column">
+            
+        </div>
+        <div class="column">
+            <h1>Registration Form</h1> 
+        </div>
+        <div class="column">
+
+        </div>
     </div>
+    <!-------------- Modal --------------------->
     <div class="form row">
         <div class="modal" id="modal">
             <div class="modal-bg modal-exit"></div>
@@ -27,8 +35,10 @@
                 </div>
             </div>
         </div>
+        <!----------------------- Form ---------------------->
         <form action="#" id="registration-form">
             <div class="row">
+                <!-- First Name -->
                 <div class="column">
                     <label for="first-name">
                         First Name 
@@ -38,10 +48,10 @@
                         name="first-name" 
                         type="text" 
                         id="first-name" 
-                        required
                     />
                     <small></small>
                 </div>
+                <!-- Last Name -->
                 <div class="column">
                     <label for="first-name">
                         Last Name
@@ -56,6 +66,7 @@
             </div>
 
             <div class="row">
+                <!-- Email -->
                 <div class="column">
                     <label for="email">
                         Email 
@@ -65,10 +76,10 @@
                         name="email" 
                         type="text" 
                         id="email" 
-                        required
                     />
                     <small></small>
                 </div>
+                <!-- Mobile Number -->
                 <div class="column">
                     <label for="mobile-number">
                         Mobile Number 
@@ -78,13 +89,13 @@
                         name="mobile-number" 
                         type="tel" 
                         id="mobile-number" 
-                        required
                     />
                     <small></small>
                 </div>
             </div>
 
             <div class="row">
+                <!-- Current Location -->
                 <div class="column">
                     <label for="current-location">
                         Current Location 
@@ -94,10 +105,10 @@
                         name="current-location" 
                         type="text" 
                         id="current-location" 
-                        required
                     />
                     <small></small>
                 </div>
+                <!-- Gender -->
                 <div class="column">
                     <label for="gender">
                         Gender 
@@ -112,7 +123,7 @@
                             type="radio" 
                             id="gender" 
                             value="Male" 
-                            required
+                            autocomplete="off"
                         />
                         <label for="gender-female">
                             Female
@@ -122,14 +133,14 @@
                             type="radio" 
                             id="gender" 
                             value="Female" 
-                            required
                         /> 
-                        <small></small>
                     </div>
+                    <small></small>
                 </div>
             </div>
 
             <div class="row">
+                <!-- College/University -->
                 <div class="column">
                     <label for="college">
                         College/University 
@@ -144,6 +155,7 @@
                     </select>
                     <small></small>
                 </div>
+                <!-- Date of Birth -->
                 <div class="column">
                     <label for="dob">
                         Date of Birth 
@@ -153,7 +165,6 @@
                         name="dob" 
                         type="date" 
                         id="dob" 
-                        required
                     />
                     <small></small>
                 </div>
@@ -164,6 +175,7 @@
             </div>
 
             <div class="row">
+                <!-- Skill HTML -->
                 <div class="column">
                     <label for="skill-html">
                         HTML : <output for="skill-html">50</output>
@@ -180,6 +192,7 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Skill CSS -->
                 <div class="column">
                     <label for="skill-css"> 
                         CSS : <output for="skill-css">50</output>
@@ -196,6 +209,7 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Skill Javascript -->
                 <div class="column">
                     <label for="skill-javascript"> 
                         Javascript : <output for="skill-javascript">50</output>
@@ -211,20 +225,21 @@
                     <small></small>
                 </div>
             </div>
-
+<!------------------ Form Buttons ------------------------------->
             <div class="row">
-                <div class="column">
+                <div class="column button-column">
                     <button id="submit-form" type="submit" class="button">
                         SUBMIT
                     </button>
                 </div>
-                <div class="column">
+                <div class="column button-column">
                     <button type="reset" class="button-inverted">
                         RESET
                     </button>
                 </div>
             </div>
         </form>
+<!----------------- Form End --------------------------------------->
     </div>
     <script type="module" src="./js/script.js"></script>
 </body>

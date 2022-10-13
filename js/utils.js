@@ -10,10 +10,14 @@ export const isEmpty = (value) => value == '' ? true : false ;
 export const showError = (input, message) => {
     // get the form-field element
     const formField = input.parentElement ;
-    
     // show the error message
     const error = formField.querySelector('small') ;
     error.textContent = message ;
+    // add indicator
+    const el = formField.querySelector('span') ; 
+    el.classList.remove('green-valid') ;
+    el.classList.add('red-required') ;
+    el.innerText = '*' ;
 };
 
 /**
@@ -24,10 +28,14 @@ export const showError = (input, message) => {
 export const showSuccess = (input) => {
     // get the form-field element
     const formField = input.parentElement ;
-
     // hide the error message
     const error = formField.querySelector('small') ;
     error.textContent = '' ;
+    // add indicator
+    const el = formField.querySelector('span') ; 
+    el.classList.remove('red-required') ;
+    el.classList.add('green-valid') ;
+    el.innerText = '✓' ;
 }
 
 /**
