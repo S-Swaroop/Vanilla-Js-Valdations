@@ -1,5 +1,6 @@
 
 In this project I have demonstrated form validations using just javascript, HTML, and CSS. 
+Check out the live implementation [here](https://js-validation-ten.vercel.app/)
 ## What is form validation ?
 Before submitting data to the server, you should check the data in the web browser to ensure that the submitted data is in the correct format.
 
