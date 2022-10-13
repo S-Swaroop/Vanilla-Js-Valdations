@@ -1,5 +1,9 @@
-
-const UNIVERSITIES_API = 'http://universities.hipolabs.com/search?country=India' ;
+import { openModal } from './modal.js' ;
+import { 
+    showError , 
+    showSuccess ,
+    isEmpty
+} from './utils.js';
 
 const textRegex = new RegExp('^[A-Za-z]+$') ;
 const numberRegex = new RegExp('^[0-9]+$') ;
@@ -13,79 +17,6 @@ const currentLocationEl = document.getElementById('current-location') ;
 const genderEl = document.getElementById('gender') ;
 const collegeEl = document.getElementById('college-list') ;
 const dobEl = document.getElementById('dob') ;
-const skillHtmlEl = document.getElementById('skill-html') ;
-const skillCssEl = document.getElementById('skill-css') ;
-const skillJavascriptEl = document.getElementById('skill-javascript') ;
-const form = document.getElementById('registration-form') ;
-
-//------------------- FIELD DATA PRE-POPULATION -----------------//
-
-/**
- * @desc utility function to pre-populate universities list
- */
-const populateCollegeList = async () => {
-    // get select field
-    const collegelist = document.getElementById('college-list') ; 
-
-    // get list of colleges from API and extract college names from it
-    const data = await fetch(UNIVERSITIES_API)
-                .then(response => response.json()) 
-                .then(response => response.map(college => college.name)) ;
-
-    // create options
-    for (let college of data) { 
-        // create option element
-        let option = document.createElement("option") ; 
-        option.setAttribute('value', college) ;
-        let optionText = document.createTextNode(college) ;
-        option.appendChild(optionText) ;
-        // add option to select field options
-        collegelist.appendChild(option) ;
-    }
-}
-
-populateCollegeList().then(() => {
-    new TomSelect('#college-list', {
-        create: false , 
-        maxItems: 1 ,
-        maxOptions: 8 ,
-        closeAfterSelect: true , 
-        placeholder: "Select a college/university" , 
-        hidePlaceholder: true
-    }) ;
-}) ;
-
-//------------UTITLITY FUNCTIONS-------------------------//
-
-const isEmpty = (value) => value == '' ? true : false ;
-
-/**
- * @desc To show errors
- * @param {HTMLInputElement} input 
- * @param {string} message 
- */
-const showError = (input, message) => {
-    // get the form-field element
-    const formField = input.parentElement ;
-    
-    // show the error message
-    const error = formField.querySelector('small') ;
-    error.textContent = message ;
-};
-
-/**
- * @desc To show success
- * @param {HTMLInputElement} input 
- * @param {string} message 
- */
-const showSuccess = (input) => {
-    // get the form-field element
-    const formField = input.parentElement ;
-
-    // hide the error message
-    const error = formField.querySelector('small') ;
-    error.textContent = '' ;
-}
 
 //--------------VALIDATORS---------------------//
 
@@ -216,38 +147,34 @@ const validators = {
     'dob' : isDOBValid 
 } ;
 
-const values = {
-    'first-name' : firstNameEl.value , 
-    'last-name' : lastNameEl.value ,
-    'email' : emailEl.value ,
-    'mobile-number' : mobileNumberEl.value ,
-    'current-location' : currentLocationEl.value , 
-    'gender' : genderEl.value ,
-    'college-list' : collegeEl.value , 
-    'dob' : dobEl.value
-}
-
 /**
- *  Adding Event Listener to trigger form validation
+ * @desc function to validate all fields on submit
+ * @param {keyof DocumentEventMap} event 
  */
-form.addEventListener('submit', function (event) {
+
+export const validate = (event) => {
     // prevent the form from submitting
     event.preventDefault();
     const formData = {} ;
     let isFormValid = true ;
     for (let [key , value] of Object.entries(validators)) {
         isFormValid &&= value() ;
-        formData[`${key}`] = values[`${key}`] ;
     }
     // submit to the server if the form is valid
     if (isFormValid) {
+        openModal() ;
         console.log(formData) ;
     } else {
         console.log('error') ;   
     }
-});
-
-const debounce = (fn, delay = 500) => {
+}
+/**
+ * 
+ * @param {function} fn function to repeat 
+ * @param {number} delay dealy
+ * @returns 
+ */
+export const debounce = (fn, delay = 500) => {
     let timeoutId;
     return (...args) => {
         // cancel the previous timer
@@ -261,7 +188,8 @@ const debounce = (fn, delay = 500) => {
     };
 };
 
-form.addEventListener('input', debounce(function (event) {
-    console.log(event.target.parentNode)
-    validators[`${event.target.id}`]() ;
-}));
+export const check = (event) => {
+    if (!(event.target.id).includes('skill')) { //ignore skill bar events
+        validators[`${event.target.id}`]() ;    
+    }
+}

@@ -16,6 +16,17 @@
         </header>
     </div>
     <div class="form row">
+        <div class="modal" id="modal">
+            <div class="modal-bg modal-exit"></div>
+            <div class="modal-container">
+                <div class="row">
+                    <h2>Submitted Form Data</h1>
+                    <button class="modal-close modal-exit">
+                        X
+                    </button>
+                </div>
+            </div>
+        </div>
         <form action="#" id="registration-form">
             <div class="row">
                 <div class="column">
@@ -155,7 +166,7 @@
             <div class="row">
                 <div class="column">
                     <label for="skill-html">
-                        HTML 
+                        HTML : <output for="skill-html">50</output>
                     </label>
                     <input 
                         name="skill-html" 
@@ -171,7 +182,7 @@
             <div class="row">
                 <div class="column">
                     <label for="skill-css"> 
-                        CSS 
+                        CSS : <output for="skill-css">50</output>
                     </label>
                     <input 
                         name="skill-css" 
@@ -187,7 +198,7 @@
             <div class="row">
                 <div class="column">
                     <label for="skill-javascript"> 
-                        HTML 
+                        Javascript : <output for="skill-javascript">50</output>
                     </label>
                     <input 
                         name="skill-javascript" 
@@ -215,6 +226,6 @@
             </div>
         </form>
     </div>
-    <script src="./script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
